@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   searchTxtThing: string;
 
   constructor(private userService: UserService, private thingyService: ThingyService) {
-    LoopBackConfig.setBaseURL("http://192.168.110.120:3000");
+    LoopBackConfig.setBaseURL("http://192.168.110.120:3000"); // IP del loopback
     LoopBackConfig.setApiVersion("api");
   }
 
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
       if (this.searchTxtUser) {
         result = result && (user.name.indexOf(this.searchTxtUser) !== -1);
       }
-      
+
       return result;
     });
   }
