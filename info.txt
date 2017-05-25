@@ -91,4 +91,8 @@ https://vsavkin.com/immutability-vs-encapsulation-90549ab74487
 Github - Configuring a remote for a fork
 
 
+Simple attribute directive
+
+New directive:
+ng g d modules/share/directives/color-change-on-click
 
