@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   searchTxtThing: string;
 
   constructor(private userService: UserService, private thingyService: ThingyService) {
-    LoopBackConfig.setBaseURL("http://localhost:3000");
+    LoopBackConfig.setBaseURL("http://192.168.110.120:3000");
     LoopBackConfig.setApiVersion("api");
   }
 
@@ -47,13 +47,7 @@ export class AppComponent implements OnInit {
   }
 
   filterThings() {
-    this.things = this.allThings.filter((thing)=> {
-      let result = thing.active;
-      if (this.searchTxtThing) {
-        result = result && (thing.name.indexOf(this.searchTxtThing) !== -1);
-      }
-      return result;
-    });
+    
   }
 
   userTxtSearch(search: string) {
@@ -61,9 +55,12 @@ export class AppComponent implements OnInit {
     this.filterUsers();
   }
 
+  // TODO: se podria hacer aqui la búsqueda
   objTxtSearch(search: string) {
-    this.searchTxtThing = search;
-    this.filterThings();
+    // this.things = 
+    this.thingyService.getThingys(search).subscribe((things: Thing[]) => {
+      this.things = things;
+    });
   }
 
 }

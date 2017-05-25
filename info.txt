@@ -1,0 +1,66 @@
+Marc
+192.168.110.120
+
+Loopback
+Generador de servicios (apis)
+
+LoopBackConfig
+
+
+_Change detection_
+
+Default: entra hijo por hijo para ver si alguno de los campos ha cambiado.
+OnPush: "no hace falta q mires los hijos." Si el objeto es el mismo no hace falta q se entre. Si es obj es nuevo, lo detecta.
+
+
+changeDetection: ChangeDetectionStrategy.OnPush
+
+Crea un componente_ChangeDetector, ZoneJs le avisa de si hay cambios en la sección.
+
+_Inmutable_
+
+Conceptos en Inmutable:
+
+Map -> Object
+Array -> List
+
+
+.merge -> Inmutable crea un objeto nuevo a partir de mezclar 2
+
+
+_Inmutability vs Encapsulation_
+
+https://vsavkin.com/immutability-vs-encapsulation-90549ab74487
+
+
+_ZoneJs_
+
+Mockea los eventos del browser para tener un registro de cambios en las zonas
+
+Ejemplo dnd se activa / desactiva la escucha de eventos en una zona
+http://plnkr.co/edit/d3KGMh?p=preview
+
+_Directives_
+
+- Estructurales: if, for
+- De atributo
+
+Host listener: padre del listener, puede ser en un template o en una class
+Tb permite decirle que escuche en todo el documento, con: document:click
+
+ElementRef: nos da acceso al elemento del DOM
+
+HostBinding: permite manipular atributos del host
+
+_AoT_
+
+
+
+
+
+
+
+
+
+
+
