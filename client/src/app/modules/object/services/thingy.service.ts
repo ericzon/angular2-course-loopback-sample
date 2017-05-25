@@ -16,16 +16,16 @@ export class ThingyService {
 
   constructor(private thingApi: ThingApi) { }
 
-  getThingys(searchText?: string) {
+
+  getThingys(searchTxt?: string) {
     // no mira tipos, mira shapes
     // let filter: LoopBackFilter = {};
     let filter: any = {};
-    if(searchText) {
-      filter = {
-        "where" : {
-          "name": {
-            "like": "%" + searchText + "%"
-          }
+
+    if (searchTxt) {
+       filter.where = {
+        "name": {
+          "like":"%"+searchTxt+"%"
         }
       }
     }

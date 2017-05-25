@@ -27,13 +27,11 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.allUsers = this.userService.getUsers();
     this.thingyService.getThingys().subscribe((thingies: Thing[]) => {
-
       this.things = thingies;
     });
     this.searchTxtUser = '';
     this.searchTxtThing = '';
     this.filterUsers();
-    this.filterThings();
   }
 
   filterUsers() {
@@ -42,13 +40,11 @@ export class AppComponent implements OnInit {
       if (this.searchTxtUser) {
         result = result && (user.name.indexOf(this.searchTxtUser) !== -1);
       }
+      
       return result;
     });
   }
 
-  filterThings() {
-    
-  }
 
   userTxtSearch(search: string) {
     this.searchTxtUser = search;
@@ -56,8 +52,8 @@ export class AppComponent implements OnInit {
   }
 
   // TODO: se podria hacer aqui la búsqueda
-  objTxtSearch(search: string) {
     // this.things = 
+  objTxtSearch(search: string) {
     this.thingyService.getThingys(search).subscribe((things: Thing[]) => {
       this.things = things;
     });
