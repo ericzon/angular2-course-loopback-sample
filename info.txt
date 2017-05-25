@@ -1,10 +1,12 @@
-Marc
+Marc Torruella
 192.168.110.120
 
 Loopback
 Generador de servicios (apis)
 
 LoopBackConfig
+
+npm run sdk
 
 
 _Change detection_
@@ -17,22 +19,6 @@ changeDetection: ChangeDetectionStrategy.OnPush
 
 Crea un componente_ChangeDetector, ZoneJs le avisa de si hay cambios en la sección.
 
-_Inmutable_
-
-Conceptos en Inmutable:
-
-Map -> Object
-Array -> List
-
-
-.merge -> Inmutable crea un objeto nuevo a partir de mezclar 2
-
-
-_Inmutability vs Encapsulation_
-
-https://vsavkin.com/immutability-vs-encapsulation-90549ab74487
-
-
 _ZoneJs_
 
 Mockea los eventos del browser para tener un registro de cambios en las zonas
@@ -42,6 +28,7 @@ http://plnkr.co/edit/d3KGMh?p=preview
 
 _Directives_
 
+- De componente
 - Estructurales: if, for
 - De atributo
 
@@ -52,10 +39,52 @@ ElementRef: nos da acceso al elemento del DOM
 
 HostBinding: permite manipular atributos del host
 
+Context variables:
+https://angular-2-training-book.rangle.io/handout/advanced-angular/directives/providing_context_variables_to_directives.html
+
 _AoT_
 
+JiT vs AoT
+
+Se hace al generar el build (--prod)
+TreeShaking
+Es experimental aún. Rangle ha hecho una lista para poder ver los errores conocidos
+
+2 maneras de uso. con el compilador de Angular o con los ngtools de webpack
+
+private -> public
 
 
+_Inmutable_
+
+Conceptos en Inmutable:
+
+Son punteros:
+
+Map -> Object
+Array -> List
+
+Son valores:
+
+Boolean
+Number
+String
+Symbol
+Null
+Undefind
+
+.merge -> Inmutable crea un objeto nuevo a partir de mezclar 2
+
+Inmutable.fromJS se pase toda la profundidad del objeto y lo hace realmente inmutable
+
+Tiene penalización en memoria punteros
+
+Para casos críticos, de estructuras que se van a modificar mucho. Se harán sobre una mutable y cuando termine se pasará a una inmutable "withMutation"
+
+
+_Inmutability vs Encapsulation_
+
+https://vsavkin.com/immutability-vs-encapsulation-90549ab74487
 
 
 
